@@ -1,6 +1,17 @@
-var express = require('express');
-var app = express();
+"use strict";
+const express = require('express'),
+  app = express(),
+  morgan = require('morgan'),
+  path = require('path'),
+  portNumber = process.env.PORT || process.argv[2] || 8080;
 
-app.use(express.static(__dirname + "/src"));
-app.listen(process.env.PORT || 3000);
-console.log("Server up on port 3000");
+app.use(express.static(__dirname));
+app.use(morgan('dev'));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'src/index.html'));
+});
+
+app.listen(portNumber, function () {
+  console.log("Listening on port " + portNumber);
+});
