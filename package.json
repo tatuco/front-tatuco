@@ -2,12 +2,14 @@
   "name": "nggallery",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "server.js",
   "scripts": {
-    "start": "tsc && node server.js",
-    "start-dev": "tsc -w & node server.js",
-    "node": "node",
-    "tsc": "tsc"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "postinstall": "ng bild --aot -prod"
   },
   "engines": {
     "node": "8.9.4",
@@ -15,8 +17,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "^1.2.6",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -29,19 +29,8 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14",
-    "typescript": "~2.3.3",
-
-
-    "@types/core-js": "^0.9.43",
-    "@types/node": "^8.5.2",
-
-    "express": "^4.16.2",
-    "morgan": "^1.9.0",
-    "path": "^0.12.7",
-    "reflect-metadata": "^0.1.3",
-
-    "systemjs": "0.19.27",
-
+    "@angular/cli": "^1.2.6",
+    "@angular/compiler-cli": "^4.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.2.6",
